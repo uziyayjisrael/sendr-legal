@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPSA COMPLIANCE MEMO</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        h1, h2, h3, h4, h5, h6 { color: #222; margin-top: 1.5em; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background-color: rgba(27,31,35,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; font-size: 85%; }
+        pre { background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow: auto; line-height: 1.45; }
+        pre code { background-color: transparent; padding: 0; }
+        blockquote { border-left: 0.25em solid #dfe2e5; padding: 0 1em; color: #6a737d; margin: 0 0 16px 0; }
+        ul, ol { padding-left: 2em; }
+        table { border-spacing: 0; border-collapse: collapse; width: 100%; margin-top: 0; margin-bottom: 16px; }
+        table th { font-weight: 600; }
+        table th, table td { padding: 6px 13px; border: 1px solid #dfe2e5; }
+        table tr { background-color: #fff; border-top: 1px solid #c6cbd1; }
+        table tr:nth-child(2n) { background-color: #f6f8fa; }
+        hr { height: 0.25em; padding: 0; margin: 24px 0; background-color: #e1e4e8; border: 0; }
+    </style>
+</head>
+<body>
+<h1>SendR NPSA Compliance Memo (Internal Audit Trail)</h1>
+<p><strong>Date</strong>: 2026-07-05
+<strong>Subject</strong>: Compliance with the National Payment System Act (NPSA)
+<strong>Prepared for</strong>: MzansiCash Legal &amp; Operations</p>
+<h2>1. Executive Summary</h2>
+<p>This memo serves as an internal audit trail regarding the architecture of the SendR application and its compliance with the <strong>National Payment System Act (Act 78 of 1998) (&quot;NPSA&quot;)</strong>.</p>
+<p>The core technical risk addressed by this memo is the requirement that only licensed entities (banks, clearing houses, designated system operators) may clear and settle payments in South Africa. </p>
+<h2>2. Architecture &amp; Funds Flow</h2>
+<p>SendR operates strictly as a <strong>Software-as-a-Service (SaaS) and Merchant Interface</strong>, not as a clearing house or an issuer of e-money.</p>
+<h3>2.1 The Paystack Subaccount Model</h3>
+<p>We utilize Paystack South Africa (a licensed and authorized payment processor) to handle the actual movement of funds.</p>
+<ul>
+<li>When a user signs up on SendR, we dynamically create a <strong>Paystack Subaccount</strong> linked to their verified South African bank account.</li>
+<li>When User A sends money to User B, SendR instructs the Paystack API via a secure backend to charge User A&#39;s card and route the funds via Paystack&#39;s <strong>Split Payment</strong> feature.</li>
+<li>Paystack settles the funds directly into User B&#39;s subaccount, depositing the principal directly into User B&#39;s actual bank account, minus the platform margin which is settled to MzansiCash&#39;s primary Paystack account.</li>
+</ul>
+<h3>2.2 Pending Invites</h3>
+<p>If User A sends money to a phone number that is not yet registered on SendR:</p>
+<ul>
+<li>We execute a standard Paystack charge on User A, but the funds settle entirely into MzansiCash&#39;s primary Paystack account holding account.</li>
+<li>A cryptographic token is generated.</li>
+<li>When User B registers and links their bank account, the system uses Paystack API to push the held funds from MzansiCash&#39;s Paystack balance to User B&#39;s newly created subaccount.</li>
+</ul>
+<h2>3. Regulatory Conclusion</h2>
+<p>Because MzansiCash utilizes a licensed third-party (Paystack) to process the authorization, clearing, and settlement of all transactions:</p>
+<ol>
+<li>MzansiCash (Pty) Ltd does not require a banking license.</li>
+<li>MzansiCash (Pty) Ltd does not operate as a Designated Settlement System.</li>
+<li>The platform operates within the legal bounds of a third-party payment provider / merchant reseller structure.</li>
+</ol>
+
+
+</body>
+</html>

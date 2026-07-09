@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FICA COMPLIANCE POLICY</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        h1, h2, h3, h4, h5, h6 { color: #222; margin-top: 1.5em; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background-color: rgba(27,31,35,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; font-size: 85%; }
+        pre { background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow: auto; line-height: 1.45; }
+        pre code { background-color: transparent; padding: 0; }
+        blockquote { border-left: 0.25em solid #dfe2e5; padding: 0 1em; color: #6a737d; margin: 0 0 16px 0; }
+        ul, ol { padding-left: 2em; }
+        table { border-spacing: 0; border-collapse: collapse; width: 100%; margin-top: 0; margin-bottom: 16px; }
+        table th { font-weight: 600; }
+        table th, table td { padding: 6px 13px; border: 1px solid #dfe2e5; }
+        table tr { background-color: #fff; border-top: 1px solid #c6cbd1; }
+        table tr:nth-child(2n) { background-color: #f6f8fa; }
+        hr { height: 0.25em; padding: 0; margin: 24px 0; background-color: #e1e4e8; border: 0; }
+    </style>
+</head>
+<body>
+<h1>SendR FICA Compliance Policy</h1>
+<p><strong>Last Updated:</strong> 2026-07-05</p>
+<h2>1. Introduction</h2>
+<p>As an application facilitating peer-to-peer (P2P) payments in South Africa, MzansiCash (Pty) Ltd (&quot;the Company&quot;) is committed to preventing money laundering and terrorist financing. We strictly adhere to the requirements of the <strong>Financial Intelligence Centre Act (Act 38 of 2001) (&quot;FICA&quot;)</strong>.</p>
+<p>While SendR acts as a software merchant layer interfacing with Paystack South Africa (the primary Accountable Institution executing the settlement), we maintain a proactive Risk Management and Compliance Programme (RMCP).</p>
+<h2>2. Customer Due Diligence (KYC)</h2>
+<h3>2.1 Onboarding</h3>
+<p>For low-value, low-velocity P2P transactions, we employ a risk-based approach to onboarding:</p>
+<ul>
+<li><strong>Phone Number Verification</strong>: All users must verify a South African mobile number via OTP.</li>
+<li><strong>Device Fingerprinting</strong>: All accounts are bound to a specific physical device UUID to prevent automated account generation.</li>
+</ul>
+<h3>2.2 Step-Up Authentication (Enhanced Due Diligence)</h3>
+<p>We trigger step-up authentication (requiring OTP re-verification and/or manual ID document review) under the following conditions:</p>
+<ul>
+<li>A single transaction exceeds R1,000.</li>
+<li>A user attempts to send funds from an unverified or newly registered device.</li>
+<li>The total transaction velocity exceeds R15,000 per day.</li>
+</ul>
+<h2>3. Transaction Monitoring</h2>
+<p>We programmatically monitor all transactions processed through the SendR application to identify suspicious behavior:</p>
+<ul>
+<li><strong>Velocity Tracking</strong>: Limits are capped (e.g., max 10 transactions per hour, max R15,000 per day).</li>
+<li><strong>Location Anomalies</strong>: Our Device Binding system flags impossible geographic movements between login sessions.</li>
+</ul>
+<h2>4. Suspicious Activity Reporting (SAR)</h2>
+<p>In accordance with Section 29 of FICA, the Company has a legal obligation to report suspicious or unusual transactions to the Financial Intelligence Centre (FIC).</p>
+<h3>4.1 What Constitutes Suspicious Activity?</h3>
+<ul>
+<li>Rapid, successive transfers just below the reporting thresholds.</li>
+<li>Multiple accounts registered to similar device fingerprints or IP addresses.</li>
+<li>Refusal to provide further identification when step-up authentication is triggered.</li>
+</ul>
+<h3>4.2 Reporting Process</h3>
+<ul>
+<li>Our automated systems flag anomalous transactions for manual review by the Compliance Officer.</li>
+<li>If deemed suspicious, the Compliance Officer will submit a Suspicious and Unusual Transaction Report (STR) to the FIC via the goAML web portal within 15 days of becoming aware of the transaction.</li>
+<li><strong>Tipping Off</strong>: Employees are strictly prohibited by law from disclosing to a user that a STR has been or will be submitted to the FIC.</li>
+</ul>
+<h2>5. Sanctions Screening</h2>
+<p>SendR cross-references high-risk users against the Targeted Financial Sanctions (TFS) lists published by the United Nations Security Council (UNSC) and adopted by South Africa. Accounts matching sanctioned individuals will be immediately frozen, and the FIC will be notified.</p>
+<h2>6. Record Keeping</h2>
+<p>In terms of Section 22 of FICA, the Company maintains records of all transactions, device logs, and KYC data for a minimum period of <strong>seven (7) years</strong> from the date of the transaction or the termination of the business relationship.</p>
+
+
+</body>
+</html>

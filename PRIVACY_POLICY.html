@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIVACY POLICY</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        h1, h2, h3, h4, h5, h6 { color: #222; margin-top: 1.5em; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background-color: rgba(27,31,35,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; font-size: 85%; }
+        pre { background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow: auto; line-height: 1.45; }
+        pre code { background-color: transparent; padding: 0; }
+        blockquote { border-left: 0.25em solid #dfe2e5; padding: 0 1em; color: #6a737d; margin: 0 0 16px 0; }
+        ul, ol { padding-left: 2em; }
+        table { border-spacing: 0; border-collapse: collapse; width: 100%; margin-top: 0; margin-bottom: 16px; }
+        table th { font-weight: 600; }
+        table th, table td { padding: 6px 13px; border: 1px solid #dfe2e5; }
+        table tr { background-color: #fff; border-top: 1px solid #c6cbd1; }
+        table tr:nth-child(2n) { background-color: #f6f8fa; }
+        hr { height: 0.25em; padding: 0; margin: 24px 0; background-color: #e1e4e8; border: 0; }
+    </style>
+</head>
+<body>
+<h1>SendR Privacy Policy</h1>
+<p><strong>Last Updated:</strong> 2026-07-05</p>
+<p>MzansiCash (Pty) Ltd (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the SendR mobile application and services.</p>
+<p>This Privacy Policy forms part of our Terms of Use and is governed by the laws of the Republic of South Africa, specifically the <strong>Protection of Personal Information Act (POPIA)</strong>.</p>
+<h2>1. Information We Collect</h2>
+<p>To provide our P2P payment service securely, we collect the following types of information:</p>
+<h3>1.1 Personal Information</h3>
+<ul>
+<li><strong>Contact Details</strong>: Your mobile phone number (used as your primary identifier) and display name.</li>
+<li><strong>Financial Information</strong>: Bank account details (processed securely via Paystack to create your subaccount).</li>
+<li><strong>Contact List</strong>: With your explicit permission, we securely hash your device&#39;s contact list to help you discover friends who are already on SendR. We <em>never</em> store your raw contact list on our servers.</li>
+</ul>
+<h3>1.2 Device &amp; Security Information</h3>
+<p>To protect your account from fraud, we collect:</p>
+<ul>
+<li><strong>Device Identifiers</strong>: UUIDs generated on your device.</li>
+<li><strong>Device Metadata</strong>: OS version, device model, and app version.</li>
+<li><strong>Network Data</strong>: IP addresses.</li>
+<li><strong>Location Data</strong>: We collect approximate location data (rounded to ~1km precision) during login solely to calculate the distance between login attempts. This prevents impossible travel anomalies (e.g., logging in from Johannesburg and Cape Town within 5 minutes).</li>
+</ul>
+<h2>2. How We Use Your Information</h2>
+<p>We use the collected information for the following purposes:</p>
+<ul>
+<li><strong>Service Delivery</strong>: To process transactions, create your Paystack subaccount, and send notifications.</li>
+<li><strong>Security &amp; Fraud Prevention</strong>: To enforce our Device Binding architecture. We monitor login patterns and enforce step-up authentication if we detect suspicious activity (like SIM swaps or unauthorized devices).</li>
+<li><strong>Compliance</strong>: To comply with FICA regulations regarding transaction monitoring and anti-money laundering (AML).</li>
+</ul>
+<h2>3. Information Sharing and Disclosure</h2>
+<p>We do not sell your personal information. We only share information in the following circumstances:</p>
+<ul>
+<li><strong>Service Providers</strong>: We share necessary data with Paystack South Africa to process your payments and settle funds.</li>
+<li><strong>Legal Compliance</strong>: We may disclose your information to the Financial Intelligence Centre (FIC) or law enforcement if required by law (e.g., suspicious activity reports under FICA).</li>
+<li><strong>Business Transfers</strong>: If MzansiCash (Pty) Ltd is involved in a merger or acquisition, your information may be transferred.</li>
+</ul>
+<h2>4. Data Security</h2>
+<p>We implement enterprise-grade security to protect your data:</p>
+<ul>
+<li><strong>Server-Side Architecture</strong>: We employ a &quot;Never Trust the Client&quot; model. All sensitive operations and validations happen on our secure Supabase Edge Functions.</li>
+<li><strong>App Check</strong>: We use Firebase App Check (Play Integrity) to ensure that only our unmodified, official app can access our APIs.</li>
+<li><strong>Encryption</strong>: All data is encrypted in transit (TLS) and at rest.</li>
+</ul>
+<h2>5. Data Retention</h2>
+<ul>
+<li><strong>Financial Records</strong>: Under South African law, we are required to retain transactional records for seven (7) years.</li>
+<li><strong>Security Logs</strong>: Device login attempts and location anomaly logs are retained for ninety (90) days for forensic purposes, after which they are automatically deleted.</li>
+<li><strong>Account Deletion</strong>: If you request account deletion, we will soft-delete your profile to prevent immediate reuse and permanently delete your authentication record, retaining only what is legally required.</li>
+</ul>
+<h2>6. Your Rights (POPIA)</h2>
+<p>Under the Protection of Personal Information Act, you have the right to:</p>
+<ul>
+<li>Request access to the personal information we hold about you.</li>
+<li>Request correction of inaccurate information.</li>
+<li>Request the deletion of your personal information (subject to our legal retention requirements).</li>
+<li>Object to the processing of your personal information.</li>
+</ul>
+<p>To exercise these rights, please contact our Information Officer at <a href="mailto:support@mzansicash.co.za">support@mzansicash.co.za</a>.</p>
+<h2>7. Contact Us</h2>
+<p>If you have questions about this Privacy Policy, please contact us at:
+<strong>Email</strong>: <a href="mailto:support@mzansicash.co.za">support@mzansicash.co.za</a></p>
+
+
+</body>
+</html>
